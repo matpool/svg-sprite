@@ -12,6 +12,8 @@
     "@oclif/plugin-help": "^3",
     "ejs": "^3.1.6",
     "fs-extra": "^8.1.0",
+    "koa": "^2.13.1",
+    "koa-router": "^10.0.0",
     "svgo": "^2.1.0",
     "svgstore": "^3.0.0-2",
     "tslib": "^1"
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@oclif/dev-cli": "^1",
     "@types/fs-extra": "^8.1.0",
+    "@types/koa": "^2.13.0",
     "@types/node": "^10",
     "eslint": "^5.13",
     "eslint-config-oclif": "^3.1",

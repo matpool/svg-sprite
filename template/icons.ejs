@@ -48,7 +48,7 @@
   <body>
     <h2>单色图标</h2>
     <div class="icons">
-      <% normalIconNames.forEach(icon =>{%>
+      <% normal.forEach(icon =>{%>
       <div class="icon" data-clipboard-text="<%= icon %>">
         <svg aria-hidden="true">
           <use xlink:href="#<%= icon %>"></use>
@@ -60,7 +60,7 @@
 
     <h2>多色图标</h2>
     <div class="icons">
-      <% colorfulIconNames.forEach(icon =>{%>
+      <% colorful.forEach(icon =>{%>
       <div class="icon" data-clipboard-text="<%= icon %>">
         <svg aria-hidden="true">
           <use xlink:href="#<%= icon %>"></use>
