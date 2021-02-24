@@ -1,5 +1,4 @@
-svg-icons-tool
-==============
+# svg-sprite
 
 combine svg files to svg sprite
 
@@ -9,50 +8,55 @@ combine svg files to svg sprite
 [![License](https://img.shields.io/npm/l/svg-icons-tool.svg)](https://github.com/TangGeG/svg-icons-tool/blob/master/package.json)
 
 <!-- toc -->
+* [svg-sprite](#svg-sprite)
 * [Usage](#usage)
 * [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
 ```sh-session
-$ npm install -g svg-icons-tool
-$ sit COMMAND
+$ npm install -g @matpool/svg-sprite
+$ ss COMMAND
 running command...
-$ sit (-v|--version|version)
-svg-icons-tool/0.0.1 darwin-x64 node-v14.15.1
-$ sit --help [COMMAND]
+$ ss (-v|--version|version)
+@matpool/svg-sprite/0.0.1 darwin-x64 node-v14.15.1
+$ ss --help [COMMAND]
 USAGE
-  $ sit COMMAND
+  $ ss COMMAND
 ...
 ```
 <!-- usagestop -->
-# Commands
-<!-- commands -->
-* [`sit gen`](#sit-gen)
-* [`sit help [COMMAND]`](#sit-help-command)
-* [`sit init`](#sit-init)
 
-## `sit gen`
+# Commands
+
+<!-- commands -->
+* [`ss gen`](#ss-gen)
+* [`ss help [COMMAND]`](#ss-help-command)
+* [`ss init`](#ss-init)
+
+## `ss gen`
 
 auto generate icon script and example html
 
 ```
 USAGE
-  $ sit gen
+  $ ss gen
 
 OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/gen.ts](https://github.com/TangGeG/svg-icons-tool/blob/v0.0.1/src/commands/gen.ts)_
+_See code: [src/commands/gen.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.1/src/commands/gen.ts)_
 
-## `sit help [COMMAND]`
+## `ss help [COMMAND]`
 
-display help for sit
+display help for ss
 
 ```
 USAGE
-  $ sit help [COMMAND]
+  $ ss help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -63,17 +67,17 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
 
-## `sit init`
+## `ss init`
 
 init icons config and directory
 
 ```
 USAGE
-  $ sit init
+  $ ss init
 
 OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/TangGeG/svg-icons-tool/blob/v0.0.1/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.1/src/commands/init.ts)_
 <!-- commandsstop -->

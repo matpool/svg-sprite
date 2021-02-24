@@ -1,12 +1,11 @@
 {
-  "name": "svg-icons-tool",
+  "name": "@matpool/svg-sprite",
   "description": "combine svg files to svg sprite",
   "version": "0.0.1",
-  "author": "袁堂 @TangGeG",
+  "author": "yuant@8btc.com",
   "bin": {
-    "sit": "./bin/run"
+    "ss": "./bin/run"
   },
-  "bugs": "https://github.com/TangGeG/svg-icons-tool/issues",
   "dependencies": {
     "@oclif/command": "^1",
     "@oclif/config": "^1",
@@ -38,7 +37,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/TangGeG/svg-icons-tool",
+  "homepage": "https://gitee.com/btc8/dashboard/projects/btc8/svg-icons-tool/code/",
   "keywords": [
     "oclif"
   ],
@@ -46,12 +45,12 @@
   "main": "lib/index.js",
   "oclif": {
     "commands": "./lib/commands",
-    "bin": "sit",
+    "bin": "ss",
     "plugins": [
       "@oclif/plugin-help"
     ]
   },
-  "repository": "TangGeG/svg-icons-tool",
+  "repository": "btc8/svg-icons-tool.git",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
