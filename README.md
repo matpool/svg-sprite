@@ -21,7 +21,7 @@ $ npm install -g @matpool/svg-sprite
 $ ss COMMAND
 running command...
 $ ss (-v|--version|version)
-@matpool/svg-sprite/0.0.1 darwin-x64 node-v14.15.1
+@matpool/svg-sprite/0.0.2 darwin-x64 node-v14.15.1
 $ ss --help [COMMAND]
 USAGE
   $ ss COMMAND
@@ -48,7 +48,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/gen.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.1/src/commands/gen.ts)_
+_See code: [src/commands/gen.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.2/src/commands/gen.ts)_
 
 ## `ss help [COMMAND]`
 
@@ -79,5 +79,5 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.1/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.2/src/commands/init.ts)_
 <!-- commandsstop -->

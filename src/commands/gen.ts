@@ -59,14 +59,14 @@ export default class Gen extends Command {
 
     const script = this.buildScript(sprites.toString())
     await writeFile(
-      resolve(CWD, config?.paths?.output, 'svgicons.js'),
+      resolve(CWD, config?.paths?.output, 'svg-sprite.js'),
       script.replace(/\n|\r\n/g, ''),
       'utf8'
     )
 
     const html = this.buildHTML({ normalIconNames, colorfulIconNames })
     await writeFile(
-      resolve(CWD, config?.paths?.output, 'icons.html'),
+      resolve(CWD, config?.paths?.output, 'svg-sprite.html'),
       html,
       'utf8'
     )
@@ -104,7 +104,7 @@ export default class Gen extends Command {
 
   buildHTML(data: { normalIconNames; colorfulIconNames }) {
     const template = readFileSync(
-      resolve(__dirname, '../template/icons.ejs'),
+      resolve(__dirname, '../../template/icons.ejs'),
       'utf8'
     )
     const html = render(template, data)

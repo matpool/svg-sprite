@@ -1,7 +1,7 @@
 {
   "name": "@matpool/svg-sprite",
   "description": "combine svg files to svg sprite",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "yuant@8btc.com",
   "bin": {
     "ss": "./bin/run"
@@ -34,6 +34,7 @@
   "files": [
     "/bin",
     "/lib",
+    "/template",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
