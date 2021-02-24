@@ -1,0 +1,63 @@
+{
+  "name": "svg-icons-tool",
+  "description": "combine svg files to svg sprite",
+  "version": "0.0.1",
+  "author": "袁堂 @TangGeG",
+  "bin": {
+    "sit": "./bin/run"
+  },
+  "bugs": "https://github.com/TangGeG/svg-icons-tool/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^3",
+    "ejs": "^3.1.6",
+    "fs-extra": "^8.1.0",
+    "svgo": "^2.1.0",
+    "svgstore": "^3.0.0-2",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@types/fs-extra": "^8.1.0",
+    "@types/node": "^10",
+    "eslint": "^5.13",
+    "eslint-config-oclif": "^3.1",
+    "eslint-config-oclif-typescript": "^0.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "globby": "^10",
+    "ts-node": "^8",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/TangGeG/svg-icons-tool",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "sit",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "TangGeG/svg-icons-tool",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}

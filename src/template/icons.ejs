@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>svg icons</title>
+    <style>
+      html {
+        color: #a2a9c8;
+        padding: 16px;
+      }
+      .icons {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 48px;
+      }
+      .icon {
+        width: 140px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: 16px;
+        margin: 10px 0;
+        box-sizing: border-box;
+      }
+      .icon:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      svg {
+        width: 1em;
+        height: 1em;
+      }
+      p {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: 12px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>单色图标</h2>
+    <div class="icons">
+      <% normalIconNames.forEach(icon =>{%>
+      <div class="icon" data-clipboard-text="<%= icon %>">
+        <svg aria-hidden="true">
+          <use xlink:href="#<%= icon %>"></use>
+        </svg>
+        <p><%= icon %></p>
+      </div>
+      <% }) %>
+    </div>
+
+    <h2>多色图标</h2>
+    <div class="icons">
+      <% colorfulIconNames.forEach(icon =>{%>
+      <div class="icon" data-clipboard-text="<%= icon %>">
+        <svg aria-hidden="true">
+          <use xlink:href="#<%= icon %>"></use>
+        </svg>
+        <p><%= icon %></p>
+      </div>
+      <% }) %>
+    </div>
+
+    <script src="./svgicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+    <script>
+      new ClipboardJS('.icon')
+    </script>
+  </body>
+</html>
