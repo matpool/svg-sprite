@@ -21,7 +21,7 @@ $ npm install -g @matpool/svg-sprite
 $ ss COMMAND
 running command...
 $ ss (-v|--version|version)
-@matpool/svg-sprite/0.0.2 darwin-x64 node-v14.15.1
+@matpool/svg-sprite/0.0.4 darwin-x64 node-v14.15.1
 $ ss --help [COMMAND]
 USAGE
   $ ss COMMAND
@@ -35,6 +35,7 @@ USAGE
 * [`ss gen`](#ss-gen)
 * [`ss help [COMMAND]`](#ss-help-command)
 * [`ss init`](#ss-init)
+* [`ss serve`](#ss-serve)
 
 ## `ss gen`
 
@@ -48,7 +49,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/gen.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.2/src/commands/gen.ts)_
+_See code: [src/commands/gen.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.4/src/commands/gen.ts)_
 
 ## `ss help [COMMAND]`
 
@@ -79,5 +80,20 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.2/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.4/src/commands/init.ts)_
+
+## `ss serve`
+
+init icons config and directory
+
+```
+USAGE
+  $ ss serve
+
+OPTIONS
+  -h, --help       show CLI help
+  -p, --port=port  [default: 10086]
+```
+
+_See code: [src/commands/serve.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.4/src/commands/serve.ts)_
 <!-- commandsstop -->

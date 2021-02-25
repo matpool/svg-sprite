@@ -1,10 +1,10 @@
 {
   "name": "@matpool/svg-sprite",
   "description": "combine svg files to svg sprite",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "yuant@8btc.com",
   "bin": {
-    "ss": "./bin/run"
+    "ss": "bin/run"
   },
   "dependencies": {
     "@oclif/command": "^1",
