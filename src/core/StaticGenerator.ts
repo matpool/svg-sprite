@@ -3,13 +3,14 @@ import { resolve } from 'path'
 import { render } from 'ejs'
 import { Sprite } from './Sprite'
 import { SpriteResolver } from './SpriteResolver'
-import { config, CWD } from '../consts'
+import { CWD } from '../consts'
+import { project } from './Project'
 
 export class StaticGenerator {
   spriteResolver = new SpriteResolver()
   sprites: Sprite[]
   resolved: boolean = false
-  outputDir = resolve(CWD, config?.paths?.output)
+  outputDir = resolve(CWD, project.config?.paths?.output)
 
   async generate() {
     await ensureDir(this.outputDir)

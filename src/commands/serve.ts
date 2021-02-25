@@ -2,12 +2,11 @@ import { Command, flags } from '@oclif/command'
 import Koa from 'koa'
 import Router from 'koa-router'
 import serve from 'koa-static'
-import { resolve } from 'path'
 import cli from 'cli-ux'
 import chalk from 'chalk'
 
-import { config, CWD } from '../consts'
 import { StaticGenerator } from '../core/StaticGenerator'
+import { project } from '../core/Project'
 
 export default class Serve extends Command {
   static description = 'start a server to manage icons'
@@ -21,7 +20,6 @@ export default class Serve extends Command {
 
   app = new Koa()
   router = new Router()
-  outputDir = resolve(CWD, config?.paths?.output)
   generator = new StaticGenerator()
 
   async run() {
@@ -35,7 +33,7 @@ export default class Serve extends Command {
     app
       .use(router.routes())
       .use(router.allowedMethods())
-      .use(serve(this.outputDir, { index: 'index.html' }))
+      .use(serve(project.output, { index: 'index.html' }))
 
     app.listen(flags.port, () => {
       const url = `http://localhost:${flags.port}`

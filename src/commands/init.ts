@@ -1,6 +1,8 @@
 import { Command, flags } from '@oclif/command'
 import { ensureDir, writeFile } from 'fs-extra'
 import { resolve } from 'path'
+import chalk from 'chalk'
+import { project } from '../core/Project'
 import { CWD, PROJECT_CONFIG_FILE } from '../consts'
 
 export default class Init extends Command {
@@ -13,6 +15,12 @@ export default class Init extends Command {
   static args = []
 
   async run() {
+    if (project.inited) {
+      throw new Error(
+        `icons project has been inited, please delete .iconrc and retry`
+      )
+    }
+
     const paths = ['./icons/normal', './icons/colorful', './icons/output']
 
     const projectConfigFileTemplate = `{
@@ -34,5 +42,7 @@ export default class Init extends Command {
       projectConfigFileTemplate,
       'utf8'
     )
+
+    console.log(chalk.green('init icons project successfully'))
   }
 }

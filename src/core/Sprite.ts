@@ -2,7 +2,8 @@ import { readFileSync } from 'fs-extra'
 import svgstore from 'svgstore'
 import { optimize } from 'svgo'
 import { resolve } from 'path'
-import { config, CWD } from '../consts'
+import { project } from './Project'
+import { CWD } from '../consts'
 
 interface IProps {
   path: string
@@ -16,14 +17,17 @@ export class Sprite {
 
   get name() {
     return (
-      (config.prefix || '') + this.props.path.replace(/^.*\/([^/]+)\..*$/, '$1')
+      (project.config.prefix || '') +
+      this.props.path.replace(/^.*\/([^/]+)\..*$/, '$1')
     )
   }
 
   get fullpath() {
     return resolve(
       CWD,
-      this.props.colorful ? config?.paths?.colorful : config?.paths?.normal,
+      this.props.colorful
+        ? project.config.paths.colorful
+        : project.config.paths.normal,
       this.props.path
     )
   }

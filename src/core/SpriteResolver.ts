@@ -1,12 +1,13 @@
 import { readdir, stat } from 'fs-extra'
 import { resolve } from 'path'
-import { config, CWD } from '../consts'
+import { CWD } from '../consts'
 import { Sprite } from './Sprite'
+import { project } from './Project'
 
 export class SpriteResolver {
   async resolve() {
     const normalIcons = (
-      await this.getSvgFiles(resolve(CWD, config?.paths?.normal))
+      await this.getSvgFiles(resolve(CWD, project.config.paths.normal))
     ).map(
       (p: string) =>
         new Sprite({
@@ -16,7 +17,7 @@ export class SpriteResolver {
     )
 
     const colorfulIcons = (
-      await this.getSvgFiles(resolve(CWD, config?.paths?.colorful))
+      await this.getSvgFiles(resolve(CWD, project.config?.paths?.colorful))
     ).map(
       (p: string) =>
         new Sprite({
