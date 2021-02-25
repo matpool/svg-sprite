@@ -43,7 +43,7 @@
   "files": [
     "/bin",
     "/lib",
-    "/page",
+    "/page/dist",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
@@ -64,9 +64,10 @@
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "rm -rf lib && tsc -b && yarn build:page && oclif-dev manifest && oclif-dev readme",
     "test": "echo NO TESTS",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "build:page": "cd page && yarn build"
   },
   "types": "lib/index.d.ts"
 }

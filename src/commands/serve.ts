@@ -75,7 +75,7 @@ export default class Serve extends Command {
     app
       .use(router.routes())
       .use(router.allowedMethods())
-      .use(serve(resolve(__dirname, '../../page')))
+      .use(serve(resolve(__dirname, '../../page/dist')))
       .use(serve(project.output))
 
     app.listen(flags.port, () => {

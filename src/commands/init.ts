@@ -29,7 +29,7 @@ export default class Init extends Command {
     "colorful": "./icons/colorful",
     "output": "./icons/output"
   },
-  "prefix": "icon-"
+  "prefix": ""
 }`
 
     for (let p of paths) {
