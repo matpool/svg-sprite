@@ -10,10 +10,13 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
+    "chalk": "^4.1.0",
+    "cli-ux": "^5.5.1",
     "ejs": "^3.1.6",
     "fs-extra": "^8.1.0",
     "koa": "^2.13.1",
     "koa-router": "^10.0.0",
+    "koa-static": "^5.0.0",
     "svgo": "^2.1.0",
     "svgstore": "^3.0.0-2",
     "tslib": "^1"
