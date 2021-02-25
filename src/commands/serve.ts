@@ -10,7 +10,7 @@ import { config, CWD } from '../consts'
 import { StaticGenerator } from '../core/StaticGenerator'
 
 export default class Serve extends Command {
-  static description = 'init icons config and directory'
+  static description = 'start a server to manage icons'
 
   static flags = {
     port: flags.integer({ char: 'p', default: 10086 }),
