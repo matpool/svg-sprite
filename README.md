@@ -5,17 +5,22 @@ combine svg files to svg sprite
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/svg-icons-tool.svg)](https://npmjs.org/package/svg-icons-tool)
 [![Downloads/week](https://img.shields.io/npm/dw/svg-icons-tool.svg)](https://npmjs.org/package/svg-icons-tool)
-[![License](https://img.shields.io/npm/l/svg-icons-tool.svg)](https://github.com/TangGeG/svg-icons-tool/blob/master/package.json)
 
 <!-- toc -->
-* [svg-sprite](#svg-sprite)
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [svg-sprite](#svg-sprite)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`ss gen`](#ss-gen)
+  - [`ss help [COMMAND]`](#ss-help-command)
+  - [`ss init`](#ss-init)
+  - [`ss serve`](#ss-serve)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @matpool/svg-sprite
 $ ss COMMAND
@@ -27,15 +32,20 @@ USAGE
   $ ss COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-* [`ss gen`](#ss-gen)
-* [`ss help [COMMAND]`](#ss-help-command)
-* [`ss init`](#ss-init)
-* [`ss serve`](#ss-serve)
+
+- [svg-sprite](#svg-sprite)
+- [Usage](#usage)
+- [Commands](#commands)
+  - [`ss gen`](#ss-gen)
+  - [`ss help [COMMAND]`](#ss-help-command)
+  - [`ss init`](#ss-init)
+  - [`ss serve`](#ss-serve)
 
 ## `ss gen`
 
@@ -96,4 +106,5 @@ OPTIONS
 ```
 
 _See code: [src/commands/serve.ts](https://github.com/btc8/svg-icons-tool/blob/v0.0.4/src/commands/serve.ts)_
+
 <!-- commandsstop -->
