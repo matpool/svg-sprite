@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>svg icons</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/ant-design-vue@1.7.3/dist/antd.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h2>单色图标</h2>
+      <div class="icons">
+        <div
+          class="icon"
+          v-for="(icon, index) in normal"
+          :key="index"
+          @click="onCopy($event, icon.name)"
+        >
+          <svg aria-hidden="true">
+            <use :xlink:href="`#${icon.name}`"></use>
+          </svg>
+          <p>{{icon.name}}</p>
+        </div>
+        <div class="icon add" @click="onAddIcon(0)">+</div>
+      </div>
+
+      <h2>多色图标</h2>
+      <div class="icons">
+        <div
+          class="icon"
+          v-for="(icon, index) in colorful"
+          :key="index"
+          @click="onCopy($event, icon.name)"
+        >
+          <svg aria-hidden="true">
+            <use :xlink:href="`#${icon.name}`"></use>
+          </svg>
+          <p>{{icon.name}}</p>
+        </div>
+        <div class="icon add" @click="onAddIcon(1)">+</div>
+      </div>
+
+      <input
+        type="file"
+        style="display: none"
+        ref="fileInput"
+        accept=".svg"
+        multiple
+        @change="onFileChange"
+      />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ant-design-vue@1.7.3/dist/antd.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

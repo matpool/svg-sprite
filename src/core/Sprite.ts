@@ -45,6 +45,14 @@ export class Sprite {
     }
   }
 
+  get value() {
+    return {
+      ...this.props,
+      name: this.name,
+      content: this.content,
+    }
+  }
+
   static append(sprite: Sprite) {
     Sprite.store.add(sprite.name, sprite.content, {
       copyAttrs: ['fill'],

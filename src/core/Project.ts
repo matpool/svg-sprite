@@ -3,10 +3,12 @@ import { resolve } from 'path'
 import { CWD, PROJECT_CONFIG_FILE } from '../consts'
 
 class Project {
-  output = this.inited ? resolve(CWD, this.config.paths.output) : ''
-
   get root() {
     return CWD
+  }
+
+  get output() {
+    return resolve(CWD, this.config?.paths?.output)
   }
 
   get configFile() {

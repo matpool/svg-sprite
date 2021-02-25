@@ -7,6 +7,7 @@
     "ss": "bin/run"
   },
   "dependencies": {
+    "@koa/multer": "^3.0.0",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^3",
@@ -15,8 +16,10 @@
     "ejs": "^3.1.6",
     "fs-extra": "^8.1.0",
     "koa": "^2.13.1",
+    "koa-multer": "^1.0.2",
     "koa-router": "^10.0.0",
     "koa-static": "^5.0.0",
+    "multer": "^1.4.2",
     "svgo": "^2.1.0",
     "svgstore": "^3.0.0-2",
     "tslib": "^1"
@@ -40,7 +43,7 @@
   "files": [
     "/bin",
     "/lib",
-    "/template",
+    "/page",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
