@@ -20,14 +20,20 @@ export default class Serve extends Command {
 
   app = new Koa()
   router = new Router()
-  generator = new StaticGenerator()
 
   async run() {
+    if (!project.inited) {
+      throw new Error(
+        `please run ${chalk.green('ss init')} first to init the icons project`
+      )
+    }
+
     const { flags } = this.parse(Serve)
     const { app, router } = this
 
     cli.action.start('file generating...')
-    await this.generator.generate()
+    const generator = new StaticGenerator()
+    await generator.generate()
     cli.action.stop()
 
     app

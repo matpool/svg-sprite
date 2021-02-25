@@ -3,7 +3,7 @@ import { resolve } from 'path'
 import { CWD, PROJECT_CONFIG_FILE } from '../consts'
 
 class Project {
-  output = resolve(CWD, this.config.paths.output)
+  output = this.inited ? resolve(CWD, this.config.paths.output) : ''
 
   get root() {
     return CWD
