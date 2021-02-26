@@ -3,15 +3,16 @@ import Koa, { Context, Next } from 'koa'
 import Router from 'koa-router'
 import serve from 'koa-static'
 import multer from '@koa/multer'
+import bodyParser from 'koa-bodyparser'
 import cli from 'cli-ux'
 import chalk from 'chalk'
+import { writeFile, unlink, rename } from 'fs-extra'
+import { resolve } from 'path'
 
 import { StaticGenerator } from '../core/StaticGenerator'
 import { project } from '../core/Project'
 import { SpriteResolver } from '../core/SpriteResolver'
-import { resolve } from 'path'
 import { CWD } from '../consts'
-import { writeFile } from 'fs-extra'
 
 export default class Serve extends Command {
   static description = 'start a server to manage icons'
@@ -43,7 +44,16 @@ export default class Serve extends Command {
     const resolver = new SpriteResolver()
 
     router.get('/api/sprites', async (ctx: Context, next: Next) => {
-      ctx.body = (await resolver.resolve()).map((s) => s.value)
+      ctx.body = (await resolver.resolve())
+        .map((s) => s.value)
+        .sort((a, b) => a.name.localeCompare(b.name))
+      next()
+    })
+
+    router.get('/api/project', async (ctx: Context, next: Next) => {
+      ctx.body = {
+        root: project.root,
+      }
       next()
     })
 
@@ -72,7 +82,24 @@ export default class Serve extends Command {
       }
     )
 
+    router.delete('/api/sprites', async (ctx: Context, next: Next) => {
+      const { target } = ctx.request.query as { target: string }
+      await unlink(target)
+      await generator.generate()
+      ctx.body = 'ok'
+      next()
+    })
+
+    router.put('/api/sprites', async (ctx: Context, next: Next) => {
+      const { src, dst } = (ctx.request as any).body
+      await rename(src, dst)
+      await generator.generate()
+      ctx.body = 'ok'
+      next()
+    })
+
     app
+      .use(bodyParser())
       .use(router.routes())
       .use(router.allowedMethods())
       .use(serve(resolve(__dirname, '../../page/dist')))

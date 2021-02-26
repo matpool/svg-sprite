@@ -1,7 +1,15 @@
 import Vue from 'vue'
-import { message } from 'ant-design-vue'
+import {
+  Icon,
+  Modal,
+  ConfigProvider,
+  Dropdown,
+  Menu,
+  Button,
+  Input
+} from 'ant-design-vue'
 
-const components = [message]
+const components = [Icon, Modal, ConfigProvider, Dropdown, Menu, Button, Input]
 
 components.forEach(comp => {
   Vue.use(comp)
