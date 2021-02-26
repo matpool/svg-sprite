@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs-extra'
-import svgstore from '../lib/svgstore'
+import svgstore from '../../svgstore'
 import { optimize } from 'svgo'
 import { resolve } from 'path'
 import { project } from './Project'

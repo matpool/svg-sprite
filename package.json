@@ -45,6 +45,7 @@
     "/bin",
     "/lib",
     "/page/dist",
+    "svgstore",
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
