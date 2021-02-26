@@ -6,7 +6,7 @@ combine svg files to svg sprite
 [![Version](https://img.shields.io/npm/v/@matpool/svg-sprite.svg)](https://www.npmjs.com/package/@matpool/svg-sprite)
 [![Downloads/week](https://img.shields.io/npm/dw/@matpool/svg-sprite.svg)](https://npmjs.org/package/@matpool/svg-sprite)
 
-[中文文档]('https://gitee.com/btc8/dashboard/projects/btc8/svg-icons-tool/blob/master/DOC.md')
+[中文文档](https://gitee.com/btc8/dashboard/projects/btc8/svg-icons-tool/blob/master/DOC.md)
 
 <!-- toc -->
 
