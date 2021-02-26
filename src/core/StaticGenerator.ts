@@ -20,6 +20,7 @@ export class StaticGenerator {
 
   async buildSpriteScript() {
     this.sprites = await this.spriteResolver.resolve()
+    Sprite.clear()
     this.sprites.forEach((sprite) => {
       Sprite.append(sprite)
     })

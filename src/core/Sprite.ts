@@ -56,13 +56,17 @@ export class Sprite {
   }
 
   static append(sprite: Sprite) {
-    Sprite.store.add(sprite.fullname, sprite.content, {
+    this.store.add(sprite.fullname, sprite.content, {
       copyAttrs: ['fill'],
     })
     return Sprite
   }
 
   static end() {
-    return Sprite.store.toString()
+    return this.store.toString()
+  }
+
+  static clear() {
+    this.store = svgstore()
   }
 }
