@@ -1,4 +1,5 @@
 module.exports = {
+  productionSourceMap: false,
   devServer: {
     port: 10010,
     disableHostCheck: true,

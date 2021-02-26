@@ -74,7 +74,7 @@ export default {
       const formData = new FormData()
       ;[...files].forEach(f => formData.append('files', f))
       formData.append('type', this.currentType)
-
+      this.$refs.fileInput.value = ''
       const res = await http.post('/sprites', formData)
       if (res.data === 'ok') {
         this.getIcons()
