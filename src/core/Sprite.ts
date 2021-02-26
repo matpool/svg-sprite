@@ -16,10 +16,11 @@ export class Sprite {
   static store = svgstore()
 
   get name() {
-    return (
-      (project.config.prefix || '') +
-      this.props.path.replace(/^.*\/([^/]+)\..*$/, '$1')
-    )
+    return this.props.path.replace(/^.*\/([^/]+)\..*$/, '$1')
+  }
+
+  get fullname() {
+    return (project.config.prefix || '') + this.name
   }
 
   get fullpath() {
@@ -49,12 +50,13 @@ export class Sprite {
     return {
       ...this.props,
       name: this.name,
+      fullname: this.fullname,
       content: this.content,
     }
   }
 
   static append(sprite: Sprite) {
-    Sprite.store.add(sprite.name, sprite.content, {
+    Sprite.store.add(sprite.fullname, sprite.content, {
       copyAttrs: ['fill'],
     })
     return Sprite
