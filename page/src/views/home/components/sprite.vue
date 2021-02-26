@@ -1,6 +1,8 @@
 <template>
   <div class="icon">
-    <div class="svg" v-html="sprite.content"></div>
+    <svg class="svg-icon" aria-hidden="true">
+      <use :xlink:href="`#${sprite.fullname}`"></use>
+    </svg>
     <p>{{ sprite.name }}</p>
 
     <div class="actions">
@@ -96,20 +98,15 @@ export default {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
+  font-size: 48px;
 
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
-  .svg {
-    width: 48px;
-    height: 48px;
-    font-size: 48px;
-
-    ::v-deep svg {
-      width: 1em;
-      height: 1em;
-    }
+  .svg-icon {
+    width: 1em;
+    height: 1em;
   }
 
   p {

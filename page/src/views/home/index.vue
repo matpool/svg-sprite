@@ -24,7 +24,7 @@
           v-for="(icon, index) in icons"
           :key="index"
           :sprite="icon"
-          @refresh="getIcons"
+          @refresh="init"
         />
       </div>
     </div>
@@ -46,6 +46,8 @@ import http from '@/utils/http'
 import { copy } from '@/utils/common'
 import Sprite from './components/sprite'
 
+const iconScriptId = 'ICON_SCRIPT'
+
 export default {
   components: { Sprite },
   data() {
@@ -55,9 +57,13 @@ export default {
     }
   },
   created() {
-    this.getIcons()
+    this.init()
   },
   methods: {
+    init() {
+      this.getIcons()
+      this.appendIconScript()
+    },
     async getIcons() {
       const res = await http.get('/sprites')
       this.icons = res.data
@@ -77,7 +83,7 @@ export default {
       this.$refs.fileInput.value = ''
       const res = await http.post('/sprites', formData)
       if (res.data === 'ok') {
-        this.getIcons()
+        this.init()
         message.success('添加成功')
       } else {
         message.success('添加失败')
@@ -85,6 +91,16 @@ export default {
     },
     onCopy(event, text) {
       copy(event, text)
+    },
+    appendIconScript() {
+      const s = document.querySelector(`#${iconScriptId}`)
+      if (s) {
+        document.body.removeChild(s)
+      }
+      const ns = document.createElement('script')
+      ns.id = iconScriptId
+      ns.src = '/svg-sprite.js'
+      document.body.appendChild(ns)
     }
   }
 }

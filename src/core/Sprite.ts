@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs-extra'
-import svgstore from 'svgstore'
+import svgstore from '../lib/svgstore'
 import { optimize } from 'svgo'
 import { resolve } from 'path'
 import { project } from './Project'
@@ -58,6 +58,7 @@ export class Sprite {
   static append(sprite: Sprite) {
     this.store.add(sprite.fullname, sprite.content, {
       copyAttrs: ['fill'],
+      renameDefs: true,
     })
     return Sprite
   }
