@@ -1,9 +1,13 @@
 <template>
   <div class="home">
     <div class="icons">
-      <h2>
-        图标列表
+      <div class="header">
+        <h2>
+          图标列表
+        </h2>
+
         <div class="actions">
+          <a-input placeholder="输入图标名搜索..." v-model="keywords" />
           <a-dropdown>
             <a-menu slot="overlay">
               <a-menu-item key="0" @click="onAddIcon(0)">
@@ -18,10 +22,10 @@
             </a-button>
           </a-dropdown>
         </div>
-      </h2>
+      </div>
       <div class="list">
         <sprite
-          v-for="(icon, index) in icons"
+          v-for="(icon, index) in filtedIcons"
           :key="index"
           :sprite="icon"
           @refresh="init"
@@ -53,7 +57,13 @@ export default {
   data() {
     return {
       icons: [],
-      currentType: 0
+      currentType: 0,
+      keywords: ''
+    }
+  },
+  computed: {
+    filtedIcons() {
+      return this.icons.filter(i => i.name.indexOf(this.keywords) > -1)
     }
   },
   created() {
@@ -107,10 +117,18 @@ export default {
 </script>
 <style lang="less" scoped>
 .icons {
-  h2 {
+  .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    h2 {
+      margin: 0;
+    }
+
+    .ant-input {
+      width: 300px;
+    }
   }
 
   .list {
