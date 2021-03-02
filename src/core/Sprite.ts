@@ -1,9 +1,9 @@
 import { readFileSync } from 'fs-extra'
-import svgstore from '../../svgstore'
 import { optimize } from 'svgo'
 import { resolve } from 'path'
 import { project } from './Project'
 import { CWD } from '../consts'
+import { SpriteStore } from './SpriteStore'
 
 interface IProps {
   path: string
@@ -13,7 +13,7 @@ interface IProps {
 export class Sprite {
   constructor(public props: IProps) {}
 
-  static store = svgstore()
+  static store = new SpriteStore()
 
   get name() {
     return this.props.path.replace(/^.*\/([^/]+)\..*$/, '$1')
@@ -56,10 +56,7 @@ export class Sprite {
   }
 
   static append(sprite: Sprite) {
-    this.store.add(sprite.fullname, sprite.content, {
-      copyAttrs: ['fill'],
-      renameDefs: true,
-    })
+    this.store.add(sprite.fullname, sprite.content)
     return Sprite
   }
 
@@ -68,6 +65,6 @@ export class Sprite {
   }
 
   static clear() {
-    this.store = svgstore()
+    this.store = new SpriteStore()
   }
 }
