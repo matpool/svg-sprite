@@ -8,7 +8,7 @@ class Project {
   }
 
   get output() {
-    return resolve(CWD, this.config?.paths?.output)
+    return resolve(CWD, this.config?.output)
   }
 
   get configFile() {
@@ -31,11 +31,7 @@ class Project {
       )
     }
 
-    if (
-      !config?.paths?.normal ||
-      !config?.paths?.colorful ||
-      !config?.paths?.output
-    ) {
+    if (!config?.normal || !config?.colorful || !config?.output) {
       throw new Error(`config content invalid`)
     }
 

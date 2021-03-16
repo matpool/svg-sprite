@@ -69,7 +69,7 @@ export default class Serve extends Command {
         const { type } = (ctx as any).request.body
         const dstPath = resolve(
           CWD,
-          project.config?.paths?.[+type === 0 ? 'normal' : 'colorful']
+          project.config?.[+type === 0 ? 'normal' : 'colorful']
         )
         await Promise.all(
           files.map((f) =>

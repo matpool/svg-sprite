@@ -7,7 +7,7 @@ import { project } from './Project'
 export class SpriteResolver {
   async resolve() {
     const normalIcons = (
-      await this.getSvgFiles(resolve(CWD, project.config.paths.normal))
+      await this.getSvgFiles(resolve(CWD, project.config.normal))
     ).map(
       (p: string) =>
         new Sprite({
@@ -17,7 +17,7 @@ export class SpriteResolver {
     )
 
     const colorfulIcons = (
-      await this.getSvgFiles(resolve(CWD, project.config?.paths?.colorful))
+      await this.getSvgFiles(resolve(CWD, project.config?.colorful))
     ).map(
       (p: string) =>
         new Sprite({

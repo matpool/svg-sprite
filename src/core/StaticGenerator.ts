@@ -9,7 +9,7 @@ export class StaticGenerator {
   spriteResolver = new SpriteResolver()
   sprites: Sprite[]
   resolved: boolean = false
-  outputDir = resolve(CWD, project.config?.paths?.output)
+  outputDir = resolve(CWD, project.config?.output)
 
   async generate() {
     await ensureDir(this.outputDir)

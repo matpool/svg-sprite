@@ -24,12 +24,10 @@ export default class Init extends Command {
     const paths = ['./icons/normal', './icons/colorful', './icons/output']
 
     const projectConfigFileTemplate = `{
-  "paths": {
-    "normal": "./icons/normal",
-    "colorful": "./icons/colorful",
-    "output": "./icons/output"
-  },
-  "prefix": ""
+  "normal": "./icons/normal",
+  "colorful": "./icons/colorful",
+  "output": "./icons/output",
+  "prefix": "icon-"
 }`
 
     for (let p of paths) {

@@ -26,9 +26,7 @@ export class Sprite {
   get fullpath() {
     return resolve(
       CWD,
-      this.props.colorful
-        ? project.config.paths.colorful
-        : project.config.paths.normal,
+      this.props.colorful ? project.config.colorful : project.config.normal,
       this.props.path
     )
   }

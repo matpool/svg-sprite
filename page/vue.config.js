@@ -1,3 +1,7 @@
+const webpack = require('webpack')
+const { readFileSync } = require('fs')
+const { resolve } = require('path')
+
 module.exports = {
   productionSourceMap: false,
   devServer: {
@@ -21,5 +25,14 @@ module.exports = {
         }
       }
     }
+  },
+  configureWebpack: {
+    plugins: [
+      new webpack.DefinePlugin({
+        DOC: JSON.stringify(
+          readFileSync(resolve(__dirname, '../doc.md'), 'utf8')
+        )
+      })
+    ]
   }
 }
