@@ -9,45 +9,34 @@ combine svg files to svg sprite
 [中文文档](https://gitee.com/btc8/dashboard/projects/btc8/svg-icons-tool/blob/master/doc.md)
 
 <!-- toc -->
-
-- [svg-sprite](#svg-sprite)
-- [Usage](#usage)
-- [Commands](#commands)
-  - [`ss gen`](#ss-gen)
-  - [`ss help [COMMAND]`](#ss-help-command)
-  - [`ss init`](#ss-init)
-  - [`ss serve`](#ss-serve)
+* [svg-sprite](#svg-sprite)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @matpool/svg-sprite
 $ ss COMMAND
 running command...
 $ ss (-v|--version|version)
-@matpool/svg-sprite/1.0.0 darwin-x64 node-v14.15.1
+@matpool/svg-sprite/1.0.1 darwin-x64 node-v14.15.1
 $ ss --help [COMMAND]
 USAGE
   $ ss COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
-
-- [svg-sprite](#svg-sprite)
-- [Usage](#usage)
-- [Commands](#commands)
-  - [`ss gen`](#ss-gen)
-  - [`ss help [COMMAND]`](#ss-help-command)
-  - [`ss init`](#ss-init)
-  - [`ss serve`](#ss-serve)
+* [`ss gen`](#ss-gen)
+* [`ss help [COMMAND]`](#ss-help-command)
+* [`ss init`](#ss-init)
+* [`ss serve`](#ss-serve)
 
 ## `ss gen`
 
@@ -61,7 +50,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/gen.ts](https://github.com/btc8/svg-icons-tool/blob/v1.0.0/src/commands/gen.ts)_
+_See code: [src/commands/gen.ts](https://github.com/btc8/svg-icons-tool/blob/v1.0.1/src/commands/gen.ts)_
 
 ## `ss help [COMMAND]`
 
@@ -92,7 +81,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/btc8/svg-icons-tool/blob/v1.0.0/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/btc8/svg-icons-tool/blob/v1.0.1/src/commands/init.ts)_
 
 ## `ss serve`
 
@@ -107,6 +96,5 @@ OPTIONS
   -p, --port=port  [default: 10086]
 ```
 
-_See code: [src/commands/serve.ts](https://github.com/btc8/svg-icons-tool/blob/v1.0.0/src/commands/serve.ts)_
-
+_See code: [src/commands/serve.ts](https://github.com/btc8/svg-icons-tool/blob/v1.0.1/src/commands/serve.ts)_
 <!-- commandsstop -->
