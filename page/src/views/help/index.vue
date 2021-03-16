@@ -19,8 +19,10 @@ export default {
       return marked(DOC)
     }
   },
-  created() {
-    hljs.highlightAll()
+  mounted() {
+    this.$nextTick(() => {
+      hljs.highlightAll()
+    })
   }
 }
 </script>

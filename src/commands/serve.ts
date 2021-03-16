@@ -8,6 +8,7 @@ import cli from 'cli-ux'
 import chalk from 'chalk'
 import { writeFile, unlink, rename } from 'fs-extra'
 import { resolve } from 'path'
+import { historyApiFallback } from 'koa2-connect-history-api-fallback'
 
 import { StaticGenerator } from '../core/StaticGenerator'
 import { project } from '../core/Project'
@@ -99,6 +100,7 @@ export default class Serve extends Command {
     })
 
     app
+      .use(historyApiFallback({ whiteList: ['/api'] }))
       .use(bodyParser())
       .use(router.routes())
       .use(router.allowedMethods())
