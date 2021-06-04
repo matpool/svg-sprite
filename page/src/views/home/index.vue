@@ -25,8 +25,8 @@
       </div>
       <div class="list">
         <sprite
-          v-for="(icon, index) in filtedIcons"
-          :key="index"
+          v-for="icon in filtedIcons"
+          :key="icon.name"
           :sprite="icon"
           @refresh="init"
         />
