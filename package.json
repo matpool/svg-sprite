@@ -63,7 +63,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "btc8/svg-icons-tool.git",
+  "repository": "matpool/svg-sprite.git",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
