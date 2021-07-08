@@ -50,7 +50,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://gitee.com/btc8/dashboard/projects/btc8/svg-icons-tool/code/",
+  "homepage": "https://github.com/matpool/svg-sprite",
   "keywords": [
     "oclif"
   ],
