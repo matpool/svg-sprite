@@ -25,7 +25,6 @@ export class SpriteResolver {
           colorful: true,
         })
     )
-
     return [...normalIcons, ...colorfulIcons]
   }
 

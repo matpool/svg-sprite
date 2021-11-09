@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs-extra'
 import { optimize } from 'svgo'
-import { resolve } from 'path'
+import { resolve, basename, extname } from 'path'
 import { project } from './Project'
 import { CWD } from '../consts'
 import { SpriteStore } from './SpriteStore'
@@ -16,7 +16,7 @@ export class Sprite {
   static store = new SpriteStore()
 
   get name() {
-    return this.props.path.replace(/^.*\/([^/]+)\..*$/, '$1')
+    return basename(this.props.path, extname(this.props.path))
   }
 
   get fullname() {
