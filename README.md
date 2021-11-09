@@ -22,7 +22,7 @@ $ npm install -g @matpool/svg-sprite
 $ ss COMMAND
 running command...
 $ ss (-v|--version|version)
-@matpool/svg-sprite/1.0.5 darwin-x64 node-v12.18.3
+@matpool/svg-sprite/1.0.6 darwin-x64 node-v14.17.6
 $ ss --help [COMMAND]
 USAGE
   $ ss COMMAND
@@ -50,7 +50,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/gen.ts](https://github.com/matpool/svg-sprite/blob/v1.0.5/src/commands/gen.ts)_
+_See code: [src/commands/gen.ts](https://github.com/matpool/svg-sprite/blob/v1.0.6/src/commands/gen.ts)_
 
 ## `ss help [COMMAND]`
 
@@ -81,7 +81,7 @@ OPTIONS
   -h, --help  show CLI help
 ```
 
-_See code: [src/commands/init.ts](https://github.com/matpool/svg-sprite/blob/v1.0.5/src/commands/init.ts)_
+_See code: [src/commands/init.ts](https://github.com/matpool/svg-sprite/blob/v1.0.6/src/commands/init.ts)_
 
 ## `ss serve`
 
@@ -96,5 +96,5 @@ OPTIONS
   -p, --port=port  [default: 10086]
 ```
 
-_See code: [src/commands/serve.ts](https://github.com/matpool/svg-sprite/blob/v1.0.5/src/commands/serve.ts)_
+_See code: [src/commands/serve.ts](https://github.com/matpool/svg-sprite/blob/v1.0.6/src/commands/serve.ts)_
 <!-- commandsstop -->
