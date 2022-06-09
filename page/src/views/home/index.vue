@@ -30,7 +30,7 @@
           @refresh="init"
         />
       </div>
-      <a-divider v-if="colorfulIcons.length" dashed />
+      <a-divider v-if="normalIcons.length && colorfulIcons.length" dashed />
       <div class="list">
         <sprite
           v-for="icon in colorfulIcons"
