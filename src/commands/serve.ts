@@ -9,6 +9,7 @@ import chalk from 'chalk'
 import { writeFile, unlink, rename } from 'fs-extra'
 import { resolve } from 'path'
 import { historyApiFallback } from 'koa2-connect-history-api-fallback'
+import chokidar from 'chokidar'
 
 import { StaticGenerator } from '../core/StaticGenerator'
 import { project } from '../core/Project'
@@ -111,5 +112,18 @@ export default class Serve extends Command {
       const url = `http://localhost:${flags.port}`
       console.log(`svg sprite is serving at ${chalk.green(url)}`)
     })
+
+    const normalDir = resolve(CWD, project.config.normal)
+    const colorfulDir = resolve(CWD, project.config.colorful)
+
+    const handler = async (event, path) => {
+      console.log('icon files changed, regenerating...')
+      await generator.generate()
+      console.log('regenerate success!')
+    }
+
+    chokidar
+      .watch([normalDir, colorfulDir], { ignoreInitial: true })
+      .on('all', handler)
   }
 }

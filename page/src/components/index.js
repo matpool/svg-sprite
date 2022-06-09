@@ -6,10 +6,20 @@ import {
   Dropdown,
   Menu,
   Button,
-  Input
+  Input,
+  Divider
 } from 'ant-design-vue'
 
-const components = [Icon, Modal, ConfigProvider, Dropdown, Menu, Button, Input]
+const components = [
+  Icon,
+  Modal,
+  ConfigProvider,
+  Dropdown,
+  Menu,
+  Button,
+  Input,
+  Divider
+]
 
 components.forEach(comp => {
   Vue.use(comp)

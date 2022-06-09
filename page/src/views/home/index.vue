@@ -2,12 +2,10 @@
   <div class="home">
     <div class="icons">
       <div class="header">
-        <h2>
-          图标列表
-        </h2>
-
+        <h2>图标列表</h2>
         <div class="actions">
           <a-input placeholder="输入图标名搜索..." v-model="keywords" />
+
           <a-dropdown>
             <a-menu slot="overlay">
               <a-menu-item key="0" @click="onAddIcon(0)">
@@ -23,9 +21,19 @@
           </a-dropdown>
         </div>
       </div>
+
       <div class="list">
         <sprite
-          v-for="icon in filtedIcons"
+          v-for="icon in normalIcons"
+          :key="icon.name"
+          :sprite="icon"
+          @refresh="init"
+        />
+      </div>
+      <a-divider v-if="colorfulIcons.length" dashed />
+      <div class="list">
+        <sprite
+          v-for="icon in colorfulIcons"
           :key="icon.name"
           :sprite="icon"
           @refresh="init"
@@ -58,17 +66,27 @@ export default {
     return {
       icons: [],
       currentType: 0,
-      keywords: ''
+      keywords: '',
+      addVisible: false,
+      addLoading: false,
+      addIcons: []
     }
   },
   computed: {
     filtedIcons() {
       return this.icons.filter(i => i.name.indexOf(this.keywords) > -1)
+    },
+    normalIcons() {
+      return this.filtedIcons.filter(i => !i.colorful)
+    },
+    colorfulIcons() {
+      return this.filtedIcons.filter(i => i.colorful)
     }
   },
   created() {
     this.init()
   },
+
   methods: {
     init() {
       this.getIcons()
@@ -87,6 +105,7 @@ export default {
       if (!files.length) {
         return
       }
+
       const formData = new FormData()
       ;[...files].forEach(f => formData.append('files', f))
       formData.append('type', this.currentType)
@@ -121,6 +140,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 24px;
 
     h2 {
       margin: 0;
@@ -134,6 +154,30 @@ export default {
   .list {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+</style>
+<style lang="less">
+.add-icon-modal {
+  .add-icons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .add-icon {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+
+    &-svg {
+      & > svg {
+        width: 48px;
+        height: 48px;
+      }
+    }
   }
 }
 </style>
