@@ -1,7 +1,7 @@
 {
   "name": "@matpool/svg-sprite",
   "description": "combine svg files to svg sprite",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "yuant@8btc.com",
   "bin": {
     "ss": "bin/run"
